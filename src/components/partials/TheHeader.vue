@@ -3,7 +3,7 @@
     <div :class="$style.header_top">
       <a href="#" :class="$style.logo">
         <span :class="$style.txtpwa">pwa</span>
-        <span :class="$style.txtstore">lab.inbusiness.no</span>
+        <span :class="$style.txtstore">{{ $_settings.page_title }}</span>
       </a>
       <nav>
         <a href="#" :class="$style.icon">
