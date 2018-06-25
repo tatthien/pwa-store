@@ -25,6 +25,14 @@
         <i><font-awesome icon="cog" /></i>
         <span>Settings</span>
       </router-link>
+
+      <router-link
+      to="/about"
+      :class="$style.tab_icon"
+      :active-class="$style.tab_icon_active">
+        <i><font-awesome icon="info" /></i>
+        <span>About</span>
+      </router-link>
     </nav>
   </div>
 </template>

@@ -1,24 +1,26 @@
 <template>
   <div>
     <div :class="$style.grid">
+      <p v-if="isShowLoading">Loading...</p>
       <product-list-item
       v-for="product in products"
       :key="product.id"
       :product="product" />
-    </div>
-
-    <div :class="$style.loadmore">
-      <button :class="$style.button">Load more</button>
     </div>
   </div>
 </template>
 
 <script>
 import ProductListItem from './ProductListItem'
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     ProductListItem
+  },
+  data () {
+    return {
+      isShowLoading: true
+    }
   },
   computed: {
     ...mapGetters({
@@ -26,16 +28,17 @@ export default {
     })
   },
   methods: {
-    ...mapActions({
-      'fetchProducts': 'product/fetchProducts'
-    })
+    async fetchProducts () {
+      try {
+       await this.$store.dispatch('product/fetchProducts')
+       this.isShowLoading = false
+      } catch (error) {
+        console.log(error)
+      }
+    }
   },
   created () {
-    try {
-      this.fetchProducts()
-    } catch (error) {
-      console.log(error)
-    }
+    this.fetchProducts()
   }
 }
 </script>

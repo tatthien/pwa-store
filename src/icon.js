@@ -7,7 +7,8 @@ import {
   faUserAlt,
   faHeart,
   faCog,
-  faBell
+  faBell,
+  faInfo
  } from '@fortawesome/free-solid-svg-icons'
 
 library.add([
@@ -16,7 +17,8 @@ library.add([
   faUserAlt,
   faHeart,
   faCog,
-  faBell
+  faBell,
+  faInfo
 ])
 
 Vue.component('FontAwesome', FontAwesomeIcon)
