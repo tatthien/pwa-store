@@ -28,7 +28,7 @@ module.exports = {
   pwa: {
     workboxOptions: {
       runtimeCaching: [{
-        urlPattern: '/api/',
+        urlPattern: /api/,
         handler: 'cacheFirst'
       }]
     }
