@@ -1,4 +1,4 @@
-[template.environment]
+[build.environment]
   VUE_APP_CONSUMER_KEY = "Your WooCommerce consumer key"
   VUE_APP_CONSUMER_SECRET_KEY = "Your WooCommerce consumer secret key"
 [build]
